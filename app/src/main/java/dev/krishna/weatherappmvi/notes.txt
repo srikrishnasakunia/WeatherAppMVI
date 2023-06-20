@@ -1,0 +1,7 @@
+1. Desugaring -> Refers to a library which enables us to write code irrespective of OS and APIs level.
+2. Clean Code mainly refers to a code pattern in which we separate the project into 3 parts namely
+    i. Presentation Layer -> Contains the UI part of the project.
+    ii. Domain Layer -> Contains the Business Logic and implementation part of the project.
+    iii. Data Layer -> Contains the Logic for getting data either remotely or locally and supplying
+                        it to Domain Layer.
+3.
