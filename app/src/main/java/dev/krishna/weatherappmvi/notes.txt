@@ -1,7 +1,42 @@
 1. Desugaring -> Refers to a library which enables us to write code irrespective of OS and APIs level.
+
 2. Clean Code mainly refers to a code pattern in which we separate the project into 3 parts namely
     i. Presentation Layer -> Contains the UI part of the project.
-    ii. Domain Layer -> Contains the Business Logic and implementation part of the project.
+    ii. Domain Layer -> Contains the Business Logic and implementation part of the project. Innermost
+                        layer and doesn't know about implementations in project like from where data
+                        is coming, libs used etc.
     iii. Data Layer -> Contains the Logic for getting data either remotely or locally and supplying
                         it to Domain Layer.
-3.
+
+3.  One aspect of clean architecture is that, one layer shouldn't know about the other layer. For
+    example. We have Remote Package that deals with API calling and handling the response. Now we are
+    using retrofit for API calling and moshi for mapping. As per Clean Architecture, the data should
+    be received by remote package classes like DTOs (Data Transfer Object) and then they should be
+    mapped to data classes present in Domain Layer. Sounds like we are repeating ourselves by having
+    two data classes. Well, it does serves to principle of clean architecture. In case, we decided to
+    move from API calling to Room DB, then we have to rewrote the entire code, as we are replacing the
+    lib. But thanks to Clean Architecture, we just have to change the code in one package namely data
+    and we will done. This is also something called as SoC or Separation of Concerns.
+
+4. suspendCancellableCoroutine -> This is a type of coroutine which helps us in delaying with callback
+   objects. Callbacks are kind off functions that are passed as a parameter in another function.
+   For example, We have two classes, one which executes the task, another which listens and notify
+   if the task is completed or not. Now both this tasks coupled together to do something and notify
+   the main class if the task is completed or not. So in other to do so, we pass the object of
+   taskCompletedListener to completeTask class and then this completeTask Class is used by main class
+   to do and get the callback if the task is completed or not. Analogical speaking, Managers have employees
+   and assistants. The Employee does the work, and the assistants notify the managers that the work
+   is done and that's how manager gets to know if the work is done or not.
+
+   Object callbacks are useful in scenarios where we want to decouple the execution of a task from
+   the actions that should be performed when the task is completed. It allows us to define
+   different callback implementations and pass them dynamically to the executing component,
+   enabling flexible and reusable code.
+
+5. FusedLocationProviderClient -> It is a part of the GooglePlayService library and provides more
+    accurate locations compared to LocationManager(old way). It utilises multiple location providers,
+    including GPS, WiFi, Cellular networks to provide accurate and fused locations. It offers
+    additional features such as automatic selection of best available location resource and battery
+    optimisation.
+
+6.

@@ -1,5 +1,5 @@
 [versions]
-agp = "8.2.0-alpha07"
+agp = "8.2.0-alpha12"
 hilt = "2.46.1"
 hilt-compiler = "1.0.0"
 hilt-lifecycle-viewmodel = "1.0.0-alpha03"
